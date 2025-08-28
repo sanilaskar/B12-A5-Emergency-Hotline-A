@@ -3,9 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emergency Hotline</title>
+    <title>Document</title>
+    <!-- daisy ui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 </head>
 <body>
-    
+    <nav class="flex justify-between items-center bg-white p-4 px-10 shadow ">
+        <div class="flex items-center gap-2">
+            <img  src="./assets/logo.png" class="w-8 h-8" alt="">
+            <h1 class="font-bold text-[#006747]">Emergency <br>Service</h1>
+        </div>
+        <!-- <div class="flex items-center gap-4">
+            <img src="./assets/heart.png" alt="">
+            <img src="./assets/coin.png" alt="">
+            <p>0 copy</p>
+        </div> -->
+        <div class="flex items-center gap-4">
+            <span id="heartCount" class="bg-[#41ff6b1a] min-w-[100px] h[50px] px-4 py-2 items-center  text-center rounded-3xl">0 ❤️</span>
+            <span id="coinCount"  class="bg-[#41ff6b1a] min-w-[100px] h[50px] px-4 py-2 items-center  text-center rounded-3xl">100 💰</span>
+            <span id="copyCount"  class="bg-[#00A63E] min-w-[100px] h[50px] px-4 py-2 items-center  text-center rounded-3xl">📋 0 Copy</span>
+        </div>
+    </nav>
+    <!-- <div class="text-center items-center">
+        <img src="./assets/logo.png" alt="">
+        <h1>Emergency Service Directory</h1>
+        <p>Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+    </div> -->
+    <!-- banner -->
+     <section class="bg-gradient-to-r from-green-800 to-green-600 text-white text-center py-10">
+            <img src="./assets/logo.png" class="mx-auto w-16 h-16 text-white" alt="">
+            <h1 class="text-2xl font-bold mt-2">Emergency Service Directory</h1>
+            <p class="mt-2">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+        </section>
+    <!-- Main Section -->
+    <main class="grid md:grid-cols-4 gap-4 p-4">
+        <!-- Cards -->
+        
+        <section class="md:col-span-3 grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="cardContainer">
+        <!-- 1st -->
+        <div class="bg-white p-4 rounded shadow">
+            <div class="flex justify-between items-center">
+                <span class="font-bold">National Emergency Number</span>
+                <button class="heartBtn">❤️</button>
+            </div>
+            <p class="text-sm text-gray-600">999</p>
+            <span class="inline-block bg-green-100 text-green-700 text-xs px-2 py-1 rounded">All</span>
+            <div class="flex gap-2 mt-3">
+                <button class="copyBtn bg-gray-200 px-3 py-1 rounded" data-number="999">📋 Copy</button>
+                <button class="callBtn bg-green-500 text-white px-3 py-1 rounded" data-service="National Emergency" data-number="999">📞 Call</button>
+            </div>
+        </div>
+        <!-- 2nd  -->
+        <div class="bg-white p-4 rounded shadow">
+            <div class="flex justify-between items-center">
+                <span class="font-bold">National Emergency Number</span>
+                <button class="heartBtn">❤️</button>
+            </div>
+            <p class="text-sm text-gray-600">999</p>
+            <span class="inline-block bg-green-100 text-green-700 text-xs px-2 py-1 rounded">All</span>
+            <div class="flex gap-2 mt-3">
+                <button class="copyBtn bg-gray-200 px-3 py-1 rounded" data-number="999">📋 Copy</button>
+                <button class="callBtn bg-green-500 text-white px-3 py-1 rounded" data-service="National Emergency" data-number="999">📞 Call</button>
+            </div>
+        </div> 
+        <!-- 3rd -->
+        <div class="bg-white p-4 rounded shadow">
+            <div class="flex justify-between items-center">
+                <span class="font-bold">National Emergency Number</span>
+                <button class="heartBtn">❤️</button>
+            </div>
+            <p class="text-sm text-gray-600">999</p>
+            <span class="inline-block bg-green-100 text-green-700 text-xs px-2 py-1 rounded">All</span>
+            <div class="flex gap-2 mt-3">
+                <button class="copyBtn bg-gray-200 px-3 py-1 rounded" data-number="999">📋 Copy</button>
+                <button class="callBtn bg-green-500 text-white px-3 py-1 rounded" data-service="National Emergency" data-number="999">📞 Call</button>
+            </div>
+        </div>
+        <!-- 4th -->
+        <div class="bg-white p-4 rounded shadow">
+            <div class="flex justify-between items-center">
+                <span class="font-bold">National Emergency Number</span>
+                <button class="heartBtn">❤️</button>
+            </div>
+            <p class="text-sm text-gray-600">999</p>
+            <span class="inline-block bg-green-100 text-green-700 text-xs px-2 py-1 rounded">All</span>
+            <div class="flex gap-2 mt-3">
+                <button class="copyBtn bg-gray-200 px-3 py-1 rounded" data-number="999">📋 Copy</button>
+                <button class="callBtn bg-green-500 text-white px-3 py-1 rounded" data-service="National Emergency" data-number="999">📞 Call</button>
+            </div>
+        </div>
+        <!-- 5th -->
+        <div class="bg-white p-4 rounded shadow">
+            <div class="flex justify-between items-center">
+                <span class="font-bold">National Emergency Number</span>
+                <button class="heartBtn">❤️</button>
+            </div>
+            <p class="text-sm text-gray-600">999</p>
+            <span class="inline-block bg-green-100 text-green-700 text-xs px-2 py-1 rounded">All</span>
+            <div class="flex gap-2 mt-3">
+                <button class="copyBtn bg-gray-200 px-3 py-1 rounded" data-number="999">📋 Copy</button>
+                <button class="callBtn bg-green-500 text-white px-3 py-1 rounded" data-service="National Emergency" data-number="999">📞 Call</button>
+            </div>
+        </div>
+        <!-- 6th -->
+        <div class="bg-white p-4 rounded shadow">
+            <div class="flex justify-between items-center">
+                <span class="font-bold">National Emergency Number</span>
+                <button class="heartBtn">❤️</button>
+            </div>
+            <p class="text-sm text-gray-600">999</p>
+            <span class="inline-block bg-green-100 text-green-700 text-xs px-2 py-1 rounded">All</span>
+            <div class="flex gap-2 mt-3">
+                <button class="copyBtn bg-gray-200 px-3 py-1 rounded" data-number="999">📋 Copy</button>
+                <button class="callBtn bg-green-500 text-white px-3 py-1 rounded" data-service="National Emergency" data-number="999">📞 Call</button>
+            </div>
+        </div>
+    </section>
+        <aside class="bg-white p-4 rounded shadow" id="historySection">
+            <div class="flex justify-between items-center mb-2">
+                <h2 class="font-bold">📞 Call History</h2>
+                <button id="clearHistory" class="bg-red-500 text-white px-2 py-1 rounded">Clear</button>
+            </div>
+            <ul id="historyList" class="text-sm text-gray-700"></ul>
+        </aside>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
