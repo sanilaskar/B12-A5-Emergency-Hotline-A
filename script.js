@@ -2,61 +2,62 @@ let heartCount = 0;
 let coinCount = 100;
 let copyCount = 0;
 
-
+// DOM elements
 const heartDisplay = document.getElementById("heartCount");
 const coinDisplay = document.getElementById("coinCount");
 const copyDisplay = document.getElementById("copyCount");
 const historyList = document.getElementById("historyList");
 
-
-// Heart button logic
-document.querySelectorAll(".heartBtn").forEach(btn => {
-btn.addEventListener("click", () => {
-heartCount++;
-heartDisplay.textContent = `❤️ ${heartCount}`;
-});
-});
-
-
-// Copy button logic
-document.querySelectorAll(".copyBtn").forEach(btn => {
-btn.addEventListener("click", () => {
-const number = btn.getAttribute("data-number");
-navigator.clipboard.writeText(number);
-alert(`Copied number: ${number}`);
-copyCount++;
-copyDisplay.textContent = `📋 ${copyCount}`;
-});
-});
-
-
-// Call button logic
-document.querySelectorAll(".callBtn").forEach(btn => {
-btn.addEventListener("click", () => {
-const service = btn.getAttribute("data-service");
-const number = btn.getAttribute("data-number");
-
-
-if (coinCount < 20) {
-alert("Not enough coins to make a call!");
-return;
+// ✅ Simple reusable function to attach events
+function setupButtons(className, handlerFunction) {
+  const buttons = document.querySelectorAll(className);
+  for (const button of buttons) {
+    button.addEventListener("click", function () {
+      return handlerFunction(button); // call the handler
+    });
+  }
 }
 
+// ✅ Heart button logic
+function heartHandler() {
+  heartCount++;
+  heartDisplay.textContent = heartCount +" ❤️";
+}
+setupButtons(".heartBtn", heartHandler);
 
-alert(`Calling ${service} at ${number}`);
-coinCount -= 20;
-coinDisplay.textContent = `💰 ${coinCount}`;
+// ✅ Copy button logic
+function copyHandler(button) {
+  const number = button.getAttribute("data-number");
+  navigator.clipboard.writeText(number);
+  alert("Copied number: " + number);
 
+  copyCount++;
+  copyDisplay.textContent = copyCount + " Copy" ;
+}
+setupButtons(".copyBtn", copyHandler);
 
-const time = new Date().toLocaleTimeString();
-const li = document.createElement("li");
-li.textContent = `${service} (${number}) — ${time}`;
-historyList.prepend(li);
-});
-});
+// ✅ Call button logic
+function callHandler(button) {
+  const service = button.getAttribute("data-service");
+  const number = button.getAttribute("data-number");
 
+  if (coinCount < 20) {
+    alert("Not enough coins to make a call!");
+    return; // stop here if not enough coins
+  }
 
-// Clear history
-document.getElementById("clearHistory").addEventListener("click", () => {
-historyList.innerHTML = "";
+  alert("Calling " + service + " at " + number);
+  coinCount -= 20;
+  coinDisplay.textContent = coinCount + " 💰" ;
+
+  const time = new Date().toLocaleTimeString();
+  const li = document.createElement("li");
+  li.textContent = service + " (" + number + ") — " + time;
+  historyList.prepend(li);
+}
+setupButtons(".callBtn", callHandler);
+
+// ✅ Clear history
+document.getElementById("clearHistory").addEventListener("click", function () {
+  historyList.innerHTML = "";
 });
