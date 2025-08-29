@@ -20,7 +20,8 @@ function setupButtons(className, handlerFunction) {
 //Heart button logic
 function heartHandler() {
   heartCount++;
-  heartDisplay.textContent = heartCount +" ❤️";
+  heartDisplay.innerHTML = heartCount + ' <i class="fa-solid fa-heart text-red-500 ml-1"></i>';
+
 }
 setupButtons(".heartBtn", heartHandler);
 
@@ -42,18 +43,18 @@ function callHandler(button) {
 
   if (coinCount < 20) {
     alert("Not enough coins to make a call!");
-    return; // stop here if not enough coins
+    return; 
   }
 
   alert("Calling " + service + " at " + number);
   coinCount -= 20;
-  coinDisplay.textContent = coinCount + " 💰" ;
+  coinDisplay.innerHTML = coinCount + ' <i class="fa-solid fa-coins text-yellow-500 ml-1"></i>';
 
   const time = new Date().toLocaleTimeString();
   const li = document.createElement("li");
   li.className = "bg-white rounded-md shadow-sm p-2 fnt";
   li.textContent = service + " (" + number + ") — " + time;
-  historyList.prepend(li);
+  historyList.appendChild(li);
 }
 setupButtons(".callBtn", callHandler);
 
