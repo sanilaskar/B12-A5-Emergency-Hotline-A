@@ -1,32 +1,30 @@
 let heartCount = 0;
 let coinCount = 100;
 let copyCount = 0;
-const transactionData = []
 
-// DOM elements
 const heartDisplay = document.getElementById("heartCount");
 const coinDisplay = document.getElementById("coinCount");
 const copyDisplay = document.getElementById("copyCount");
 const historyList = document.getElementById("historyList");
 
-// ✅ Simple reusable function to attach events
+//reusable function to attach events
 function setupButtons(className, handlerFunction) {
   const buttons = document.querySelectorAll(className);
   for (const button of buttons) {
     button.addEventListener("click", function () {
-      return handlerFunction(button); // call the handler
+      return handlerFunction(button); 
     });
   }
 }
 
-// ✅ Heart button logic
+//Heart button logic
 function heartHandler() {
   heartCount++;
   heartDisplay.textContent = heartCount +" ❤️";
 }
 setupButtons(".heartBtn", heartHandler);
 
-// ✅ Copy button logic
+//Copy button logic
 function copyHandler(button) {
   const number = button.getAttribute("data-number");
   navigator.clipboard.writeText(number);
@@ -37,7 +35,7 @@ function copyHandler(button) {
 }
 setupButtons(".copyBtn", copyHandler);
 
-// ✅ Call button logic
+//Call button logic
 function callHandler(button) {
   const service = button.getAttribute("data-service");
   const number = button.getAttribute("data-number");
@@ -61,7 +59,7 @@ setupButtons(".callBtn", callHandler);
 
 
 
-// ✅ Clear history
+//Clear history
 document.getElementById("clearHistory").addEventListener("click", function () {
   historyList.innerHTML = "";
 });
