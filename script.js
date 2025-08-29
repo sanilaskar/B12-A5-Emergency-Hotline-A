@@ -1,6 +1,7 @@
 let heartCount = 0;
 let coinCount = 100;
 let copyCount = 0;
+const transactionData = []
 
 // DOM elements
 const heartDisplay = document.getElementById("heartCount");
@@ -52,10 +53,13 @@ function callHandler(button) {
 
   const time = new Date().toLocaleTimeString();
   const li = document.createElement("li");
+  li.className = "bg-white rounded-md shadow-sm p-2 fnt";
   li.textContent = service + " (" + number + ") — " + time;
   historyList.prepend(li);
 }
 setupButtons(".callBtn", callHandler);
+
+
 
 // ✅ Clear history
 document.getElementById("clearHistory").addEventListener("click", function () {

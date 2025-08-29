@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <!-- tailwind cdn -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- google-font cdn  -->
+     <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <!-- font awesome cdn -->
     <link
       rel="stylesheet"
@@ -16,9 +19,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <style>
+    /* Apply Hind Madurai globally */
+    body {
+      font-family: "Hind Madurai", sans-serif;
+    }
+    .fnt {
+         font-family: "Inter", sans-serif;
+    }
+  </style>
 </head>
 <body>
-   <nav class="flex flex-wrap justify-between items-center bg-white p-4 md:px-6 shadow">
+   <nav class="flex flex-wrap justify-between items-center bg-white p-4 md:px-10 shadow">
     <!-- Left Logo & Title -->
         <div class="flex items-center gap-2">
          <img src="./assets/logo.png" class="w-8 h-8" alt="Logo">
@@ -53,7 +65,7 @@
             <p class="mt-2">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
         </section>
     <!-- Main Section -->
-    <main class="grid md:grid-cols-4 gap-4 p-4 md:px-6">
+    <main class="grid md:grid-cols-4 gap-4 p-4 md:px-10">
         <!-- Cards -->
         
         <section class="md:col-span-3 grid sm:grid-cols-2 lg:grid-cols-3 gap-4" id="cardContainer">
@@ -67,9 +79,9 @@
             <p class="text-xs  text-gray-500">National Emergency</p>
             <p class="text-lg font-bold mt-2">999</p>
             <span class="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-3xl">All</span>
-            <div class="flex justify-between gap-2 mt-3">
-                <button class="copyBtn px-6 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 " data-number="999"><i class="fa-solid fa-copy"></i> Copy</button>
-                <button class="callBtn bg-green-500 text-white px-6 py-1 rounded-lg " data-service="National Emergency" data-number="999"><i class="fa-solid fa-phone"></i> Call</button>
+            <div class="flex justify-between gap-2 mt-3 w-full">
+                <button class="copyBtn flex-1 px-4 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 flex items-center justify-center" data-number="999"><i class="fa-solid fa-copy"></i> Copy</button>
+                <button class="callBtn flex-1 bg-green-500 text-white px-4 py-1 rounded-lg flex items-center justify-center" data-service="National Emergency" data-number="999"><i class="fa-solid fa-phone"></i> Call</button>
             </div>
         </div>
         <!-- 2nd  -->
@@ -83,8 +95,8 @@
             <p class="text-lg font-bold mt-2">999</p>
             <span class="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-3xl">Police</span>
             <div class="flex justify-between gap-2 mt-3">
-                <button class="copyBtn px-6 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 " data-number="999"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
-                <button class="callBtn bg-green-500 text-white px-6 py-1 rounded-lg" data-service="Police" data-number="999"><i class="fa-solid fa-phone"></i> Call</button>
+                <button class="copyBtn flex-1 px-10 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 flex items-center justify-center " data-number="999"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
+                <button class="callBtn flex-1 bg-green-500 text-white px-10 py-1 rounded-lg flex items-center justify-center" data-service="Police" data-number="999"><i class="fa-solid fa-phone"></i> Call</button>
             </div>
         </div>
         <div class="bg-white p-4 rounded shadow">
@@ -97,8 +109,8 @@
             <p class="text-lg font-bold mt-2">999</p>
             <span class="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-3xl">Fire</span>
             <div class="flex justify-between gap-2 mt-3">
-                <button class="copyBtn px-6 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 " data-number="999"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
-                <button class="callBtn bg-green-500 text-white px-6 py-1 rounded-lg" data-service="Fire Service Number" data-number="999"><i class="fa-solid fa-phone"></i> Call</button>
+                <button class="copyBtn flex-1 px-10 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 flex items-center justify-center " data-number="999"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
+                <button class="callBtn flex-1 bg-green-500 text-white px-10 py-1 rounded-lg flex items-center justify-center" data-service="Fire Service Number" data-number="999"><i class="fa-solid fa-phone"></i> Call</button>
             </div>
         </div>
         <div class="bg-white p-4 rounded shadow">
@@ -111,8 +123,8 @@
             <p class="text-lg font-bold mt-2">1994-999999</p>
             <span class="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-3xl">Health</span>
             <div class="flex justify-between gap-2 mt-3">
-                <button class="copyBtn px-6 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 " data-number="1994-999999"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
-                <button class="callBtn bg-green-500 text-white px-6 py-1 rounded-lg" data-service="Ambulance Service" data-number="1994-999999"><i class="fa-solid fa-phone"></i> Call</button>
+                <button class="copyBtn flex-1 px-10 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 flex items-center justify-center " data-number="1994-999999"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
+                <button class="callBtn flex-1 bg-green-500 text-white px-10 py-1 rounded-lg flex items-center justify-center" data-service="Ambulance Service" data-number="1994-999999"><i class="fa-solid fa-phone"></i> Call</button>
             </div>
         </div>
         <div class="bg-white p-4 rounded shadow">
@@ -125,8 +137,8 @@
             <p class="text-lg font-bold mt-2">109</p>
             <span class="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-3xl">Help</span>
             <div class="flex justify-between gap-2 mt-3">
-                <button class="copyBtn px-6 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 " data-number="109"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
-                <button class="callBtn bg-green-500 text-white px-6 py-1 rounded-lg" data-service="Women & Child Helpline" data-number="109"><i class="fa-solid fa-phone"></i> Call</button>
+                <button class="copyBtn flex-1 px-10 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 flex items-center justify-center " data-number="109"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
+                <button class="callBtn flex-1 bg-green-500 text-white px-10 py-1 rounded-lg flex items-center justify-center" data-service="Women & Child Helpline" data-number="109"><i class="fa-solid fa-phone"></i> Call</button>
             </div>
         </div>
         <div class="bg-white p-4 rounded shadow">
@@ -139,8 +151,8 @@
             <p class="text-lg font-bold mt-2">106</p>
             <span class="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-3xl">Govt.</span>
             <div class="flex justify-between gap-2 mt-3">
-                <button class="copyBtn px-6 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 " data-number="106"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
-                <button class="callBtn bg-green-500 text-white px-6 py-1 rounded-lg" data-service="Anti-Corruption Helpline" data-number="106"><i class="fa-solid fa-phone"></i> Call</button>
+                <button class="copyBtn flex-1 px-10 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 flex items-center justify-center " data-number="106"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
+                <button class="callBtn flex-1 bg-green-500 text-white px-10 py-1 rounded-lg flex items-center justify-center" data-service="Anti-Corruption Helpline" data-number="106"><i class="fa-solid fa-phone"></i> Call</button>
             </div>
         </div>
         <div class="bg-white p-4 rounded shadow">
@@ -153,8 +165,8 @@
             <p class="text-lg font-bold mt-2">16216</p>
             <span class="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-3xl">Electricity</span>
             <div class="flex justify-between gap-2 mt-3">
-                <button class="copyBtn px-6 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 " data-number="16216"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
-                <button class="callBtn bg-green-500 text-white px-6 py-1 rounded-lg" data-service="Electricity Helpline" data-number="16216"><i class="fa-solid fa-phone"></i> Call</button>
+                <button class="copyBtn flex-1 px-10 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 flex items-center justify-center " data-number="16216"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
+                <button class="callBtn flex-1 bg-green-500 text-white px-10 py-1 rounded-lg flex items-center justify-center" data-service="Electricity Helpline" data-number="16216"><i class="fa-solid fa-phone"></i> Call</button>
             </div>
         </div>
         <div class="bg-white p-4 rounded shadow">
@@ -167,8 +179,8 @@
             <p class="text-lg font-bold mt-2">16445</p>
             <span class="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-3xl">NGO</span>
             <div class="flex justify-between gap-2 mt-3">
-                <button class="copyBtn px-6 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 " data-number="16445"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
-                <button class="callBtn bg-green-500 text-white px-6 py-1 rounded-lg" data-service="Brac Helpline" data-number="16445"><i class="fa-solid fa-phone"></i> Call</button>
+                <button class="copyBtn flex-1 px-10 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 flex items-center justify-center " data-number="16445"><i class="fa-solid fa-copy cpyy"></i> Copy</button>
+                <button class="callBtn flex-1 bg-green-500 text-white px-10 py-1 rounded-lg flex items-center justify-center" data-service="Brac Helpline" data-number="16445"><i class="fa-solid fa-phone"></i> Call</button>
             </div>
         </div>
         <div class="bg-white p-4 rounded shadow">
@@ -181,8 +193,8 @@
             <p class="text-lg font-bold mt-2">163</p>
             <span class="inline-block bg-gray-100 text-gray-500 text-xs px-2 py-1 rounded-3xl">Travel</span>
             <div class="flex justify-between gap-2 mt-3">
-                <button class="copyBtn px-6 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 " data-number="163"><i class="fa-solid fa-copy"></i> Copy</button>
-                <button class="callBtn bg-green-500 text-white px-6 py-1 rounded-lg" data-service="Bangladesh Railway Helpline" data-number="163"><i class="fa-solid fa-phone"></i> Call</button>
+                <button class="copyBtn flex-1 px-10 py-1 rounded-lg bg-white  text-gray-500 border-2 border-gray-200 flex items-center justify-center " data-number="163"><i class="fa-solid fa-copy"></i> Copy</button>
+                <button class="callBtn flex-1 bg-green-500 text-white px-10 py-1 rounded-lg flex items-center justify-center" data-service="Bangladesh Railway Helpline" data-number="163"><i class="fa-solid fa-phone"></i> Call</button>
             </div>
         </div>
         
@@ -192,7 +204,7 @@
                 <h2> <i class="fa-regular fa-clock"></i> <span  class="font-bold">Call History</span></h2>
                 <button id="clearHistory" class="bg-[#00A63E] min-w-[100px] h[50px] px-4 py-1 items-center  text-center text-white rounded-3xl">Clear</button>
             </div>
-            <ul id="historyList" class=" text-sm text-gray-700 bg-gray-500 rounded p-4"></ul>
+            <ul id="historyList" class=" space-y-2 text-sm text-gray-700 rounded p-4"></ul>
         </aside>
     </main>
     <script src="script.js"></script>
